@@ -36,6 +36,8 @@
   
   .card {
     align-content: center;
+    height: 200px;
+    max-width: 100%;
     align-items: center;
     background-color: white;
     border-radius: 10px;
@@ -59,5 +61,6 @@
   }
   
   .card img {
-    width: 100%;
+    object-fit: contain;
+    height: 200px;
   }
