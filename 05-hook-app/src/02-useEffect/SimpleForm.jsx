@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { Message } from './Message';
 
 export const SimpleForm = () => {
 
     const [formState, setFormState] = useState({
-        username: 'Malak',
+        username: 'malak',
         email: 'malak@gmail.com',
     });
 
@@ -20,6 +21,7 @@ export const SimpleForm = () => {
         });
     }
 
+
     useEffect( //el use effect es disparado cuando algo cambia dentro del estado de la aplicacion.
         () => {
             //console.log('use effect se ha disparado');
@@ -35,11 +37,11 @@ export const SimpleForm = () => {
     )
 
     useEffect( //el use effect es disparado cuando algo cambia dentro del estado de la aplicacion.
-    () => {
-        //console.log('emailChanged');
-    },
-    [email] //por variables.
-)
+        () => {
+            //console.log('emailChanged');
+        },
+        [email] //por variables.
+    )
 
     return (
         <>
@@ -49,6 +51,9 @@ export const SimpleForm = () => {
                 <input className="form-control" type="text" placeholder="Username" name="username" onChange={onInputChange} defaultValue={username} />
                 <input className="form-control mt-4" type="email" placeholder="email" name="email" onChange={onInputChange} defaultValue={email} />
             </form>
+            {
+                (username == 'malak2' ) &&  <Message />
+            }
         </>
     )
 }
